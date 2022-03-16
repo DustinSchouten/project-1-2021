@@ -9,41 +9,80 @@
     <title>Openbare Bibliotheek Amsterdam</title>
   </head>
   <body>
+    <div id="popup_background_overlay"></div>
     <header>
       <p>Openbare Bibliotheek Amsterdam</p>
       <img class='OBA_logo' src="img/OBA_logo.png" alt="logo OBA">
     </header>
-    <div class='background'></div>
+    <div class='background_image'></div>
     <h1>Sport en voeding</h1>
     <main>
-      <form action='/'>
-        <input type="search" id="search" name="search" placeholder="Voer hier uw zoekterm(en) in">
-        <button type="submit" aria-label="Zoek"><i class="fa fa-search"></i></button>
-      </form>
-
-      <ul class='book_items_list'>
-        <li>
-          <h2 aria-label="Titel boek">Titel boek</h2>
-          <p>Beschrijving over het boek</p>
-          <img src='img/book_cover_test.png' alt="logo OBA">
-        </li>
-        <li>
-          <h2 aria-label="Titel boek">Titel boek</h2>
-          <p>Beschrijving over het boek</p>
-          <img src='img/book_cover_test.png' alt="logo OBA">
-        </li>
-        <li>
-          <h2 aria-label="Titel boek">Titel boek</h2>
-          <p>Beschrijving over het boek</p>
-          <img src='img/book_cover_test.png' alt="logo OBA">
-        </li>
-        <li>
-          <h2 aria-label="Titel boek">Titel boek</h2>
-          <p>Beschrijving over het boek</p>
-          <img src='img/book_cover_test.png' alt="logo OBA">
-        </li>
-      </ul>
+      <section>
+        <section class='filter categorie'>
+          <label for='categorie'>Categorie:</label>
+          <select id='categorie' name='categorie'>
+            <option value="leeg">-</option>
+            <option value="sport">Sport</option>
+            <option value="voeding">Voeding</option>
+          </select>
+        </section>
+        <section class='filter type'>
+          <label for='type'>Type:</label>
+          <select id='type' name='type'>
+            <option value="leeg">-</option>
+            <option value="Boek">Boek</option>
+            <option value="Schooltv">Schooltv</option>
+            <option value="Tijdschrift">Tijdschrift</option>
+            <option value="Film">Film</option>
+            <option value="Uittreksel">Uittreksel</option>
+            <option value="Overige">Overige</option>
+          </select>
+        </section>
+        <section class='filter taal'>
+          <label for='taal'>Taal:</label>
+          <select id='taal' name='taal'>
+            <option value="leeg">-</option>
+            <option value="Nederlands">Alleen Nederlands</option>
+          </select>
+        </section>
+        <form>
+          <input type="search" id="search" name="search" placeholder="Voer hier uw zoekterm(en) in">
+          <button class='searchbutton' aria-label="Zoek"><i class="fa fa-search"></i></button>
+        </form>
+        <p id='aantal_zoekresultaten'>Aantal zoekresultaten: -</p>
+        <ul id='book_items_list'>
+          <!-- <li>
+            <img src='img/book_cover_test.png' alt="text">
+            <div class="book_info">
+              <h2 aria-label="Titel boek">Titel boek</h2>
+            </div>
+          </li>
+          <li>
+            <img src='img/book_cover_test.png' alt="text">
+            <div class="book_info">
+              <h2 aria-label="Titel boek">Titel boek</h2>
+            </div>
+          </li>
+          <li>
+            <img src='img/book_cover_test.png' alt="text">
+            <div class="book_info">
+              <h2 aria-label="Titel boek">Titel boek</h2>
+            </div>
+          </li>
+          <li>
+            <img src='img/book_cover_test.png' alt="text">
+            <div class="book_info">
+              <h2 aria-label="Titel boek">Titel boek</h2>
+            </div>
+          </li> -->
+        </ul>
+      </section>
+      <section id='details_popup' onclick='hidePopup()'>
+        <p>text</p>
+      </section>
     </main>
+
+    <script type="text/javascript" src='javascript.js'></script>
 
     <script type="module" src='javascript/app.js'></script>
   </body>
