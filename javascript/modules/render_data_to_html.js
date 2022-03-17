@@ -35,6 +35,7 @@ export function renderDataToHTML(data,query,url_type) {
 
     // Filter all the data an display it in the created elements;
     book_title.textContent = book_item.titles[0];
+    book_title.ariaLabel = book_item.titles[0];
     category.textContent = 'Categorie: ' + query;
     if (typeof(book_item.authors) != 'undefined') {
       let authors_string = '';
@@ -48,10 +49,12 @@ export function renderDataToHTML(data,query,url_type) {
     }
     summary_wrapper.textContent = 'Lees beschrijving';
     summary.textContent = (book_item.summaries || 'Geen beschrijving beschikbaar');
+    summary.ariaLabel = (book_item.summaries || 'Geen beschrijving beschikbaar');
 
     //  The data sources have a different data structure;
     if (url_type == 'normal_oba_url') {
       book_cover_img.src = book_item.coverimages[1];
+      book_cover_img.alt = 'Coverafbeelding van het boek: ' + book_item.titles[0];
       let languages_string = '';
       book_item.languages.forEach((language,idx) => {
         languages_string += language + ', ';
@@ -61,9 +64,11 @@ export function renderDataToHTML(data,query,url_type) {
 
     if (url_type == 'staging_url') {
       book_cover_img.src = 'https://v112.nbc.bibliotheek.nl/thumbnail?uri=http://data.bibliotheek.nl/ggc/ppn/047048069&token=c1322402'; // The staging data has no book cover images;
+      book_cover_img.alt = 'Coverafbeelding van het boek: ' + book_item.titles[0];
       const languages_dict = {'nl':'Nederlands','en':'Engels','x-none':'Onbekend'};
       languages.textContent = 'Taal: ' + languages_dict[book_item.languages[0]];
     }
+
 
     // Add all the book items to the DOM
     div_wrapper.appendChild(category)
