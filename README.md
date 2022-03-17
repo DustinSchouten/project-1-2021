@@ -28,7 +28,7 @@ Dit doe je met `git clone https://github.com/DustinSchouten/project-1-2021.git`
 Gebruik een live server om de website te hosten. De app werkt niet als je deze vanaf je bestandssysteem laat draaien. Zorg ook dat je de CORS extension van chrome hebt geactiveerd.
 
 ## Gebruik:
-Het gebruik van deze website is relatief eenvoudig, door het beperkte aantal interacties dat de app heeft. Op de website worden boeken getoond en kunnen er twee filters worden gebruikt om nog specfieker te zoeken op de boeken.
+Het gebruik van deze website is relatief eenvoudig, door het beperkte aantal interacties dat de app heeft. Op de website worden boeken getoond en kunnen er twee filters worden gebruikt om nog specfieker te zoeken op de boeken. Verder kan er specifiek op een titel worden gezocht door woorden die in de titel zitten, in de zoekbalk te typen.
 
 Met de eerste filter kan er gefilterd wordt op categorie en met de tweede filter kan er gefilterd wordt op de taal waarin het boek geschreven is.
 

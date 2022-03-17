@@ -1,9 +1,9 @@
 import { renderDataToHTML } from './render_data_to_html.js';
 import { voeding_data } from './voeding_data.js';
 import { sport_data } from './sport_data.js';
-import { showLoadingState } from './states.js'
-import { hideLoadingState } from './states.js'
-import { showErrorState } from './states.js'
+import { showLoadingState } from './states.js';
+import { hideLoadingState } from './states.js';
+import { showErrorState } from './states.js';
 
 export async function getData(query,url_type) {
   showLoadingState()
