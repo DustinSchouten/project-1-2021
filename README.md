@@ -1,4 +1,4 @@
-# Documentatie Website OBA Sport en voeding
+# Documentatie Project: OBA Sport en voeding
 
 - [Link naar project:](#link-naar-project)
 - [Beschrijving:](#beschrijving)
