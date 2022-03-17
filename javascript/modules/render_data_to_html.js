@@ -67,8 +67,8 @@ export function renderDataToHTML(data,query,url_type) {
       book_cover_img.alt = 'Coverafbeelding van het boek: ' + book_item.titles[0];
       const languages_dict = {'nl':'Nederlands','en':'Engels','x-none':'Onbekend'};
       languages.textContent = 'Taal: ' + languages_dict[book_item.languages[0]];
-    }
 
+    }
 
     // Add all the book items to the DOM
     div_wrapper.appendChild(category)

@@ -1,6 +1,0 @@
-title
-author
-image X
-type X
-year X
-languages

@@ -9,7 +9,7 @@ language_filter.addEventListener('change',setFilters);
 export function setFilters() {
   const language_filter_value = language_filter.value;
   const category_filter_value = category_filter.value;
-  const book_items = document.querySelectorAll('.book_item')
+  const book_items = document.querySelectorAll('.book_item');
 
   book_items.forEach((book_item,idx) => {
     book_item.classList.remove('invisible') // By default, make all the book items visible;

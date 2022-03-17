@@ -30,15 +30,6 @@ body {
   outline: 2px dashed #617bff;
 }
 
-#popup_background_overlay {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 2;
-  display: none;
-}
-
 header {
   z-index: 1;
   position: fixed;
@@ -99,7 +90,7 @@ main {
   margin: auto;
 }
 
-section.filter {
+.filter section {
   display: flex;
   flex-direction: row;
   padding-bottom: 60px;
@@ -124,23 +115,31 @@ select {
   font-size: 1.25em;
   padding-left: 5px;
   color: black;
+  cursor: pointer;
 }
 
 
-#loading_state_text {
-  font-size: 1.75em;
+#loading_state_text, #error_state_text {
+  font-size: 1.5em;
   text-align: center;
   width: 100%;
   margin: 20px auto;
+}
+
+#loading_state_text {
   animation: animateLoadingState 0.5s forwards 0s;
   animation-iteration-count: infinite;
+}
+
+#error_state_text {
+  color: darkred;
 }
 
 #aantal_zoekresultaten {
   font-size: 1.25em;
   font-weight: bold;
   text-align: center;
-  margin: 20px;
+  padding: 20px;
 }
 
 ul#book_items_list {
