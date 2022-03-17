@@ -90,14 +90,31 @@ main {
   margin: auto;
 }
 
+input {
+  width: 100%;
+  font-size: 1.25em;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  height: 50px;
+}
+
+input::placeholder {
+  color: grey;
+}
+
 .filter section {
   display: flex;
   flex-direction: row;
-  padding-bottom: 60px;
-  margin-bottom: 10px;
+  padding-bottom: 65px;
+  margin-bottom: 15px;
   border-bottom: 2px solid white;
   position: relative;
   height: 50px;
+}
+
+.filter section:first-of-type {
+  border-top: 2px solid white;
+  padding-top: 15px;
 }
 
 label {
@@ -113,11 +130,10 @@ select {
   right: 0;
   position: absolute;
   font-size: 1.25em;
-  padding-left: 5px;
+  padding-left: 15px;
   color: black;
   cursor: pointer;
 }
-
 
 #loading_state_text, #error_state_text {
   font-size: 1.5em;
