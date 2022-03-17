@@ -122,6 +122,16 @@ select {
   color: black;
 }
 
+
+#loading_state_text {
+  font-size: 1.75em;
+  text-align: center;
+  width: 100%;
+  margin: 20px auto;
+  animation: animateLoadingState 0.5s forwards 0s;
+  animation-iteration-count: infinite;
+}
+
 #aantal_zoekresultaten {
   font-size: 1.25em;
   font-weight: bold;
@@ -143,10 +153,10 @@ ul#book_items_list .book_item {
   box-shadow: 3px 3px 0px #ccc;
   border-radius: 5px;
   padding: 15px;
-  cursor: pointer;
   transition: all 0.5s ease;
   animation: showResultItem 1s ease 0s;
   animation-fill-mode: backwards;
+  overflow-y: hidden;
 }
 
 ul#book_items_list .category {
@@ -154,21 +164,23 @@ ul#book_items_list .category {
   font-style: italic;
 }
 
-@keyframes showResultItem {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+ul#book_items_list details {
+  cursor: pointer;
 }
 
-ul#book_items_list li:hover {
-  transform: scale(1.025);
+ul#book_items_list details p {
+  max-height: 175px;
+  overflow-y: auto;
+  color: #999;
+  font-size: 0.9em;
+}
+
+ul#book_items_list details p::-webkit-scrollbar {
+  width: 4px;
 }
 
 ul#book_items_list li img {
-  width: 100px;
+  width: 125px;
   height: fit-content;
   margin-right: 10px;
 }
@@ -185,28 +197,26 @@ ul#book_items_list li h2 {
   font-size: 1.1em;
 }
 
-#details_popup {
-  padding: 20px;
-  display: none;
-  z-index: 10;
-  position: fixed;
-  width: 80%;
-  height: 80%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  background-color: white;
-  box-shadow: 3px 3px 0px #ccc;
-  border-radius: 5px;
-  border: 1px solid black;
-}
-
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   ul#book_items_list {
     grid-template-columns: 1fr;
   }
 }
 
+@media (max-width: 425px) {
+  ul#book_items_list .book_item {
+    display: block;
+  }
+
+  ul#book_items_list li .book_info {
+    width: 100%;
+  }
+
+  ul#book_items_list li img {
+    display: block;
+    margin: 5px auto;
+  }
+}
 
 .invisible {
   display: none !important;
@@ -220,5 +230,27 @@ ul#book_items_list li h2 {
   100% {
     opacity: 1;
     transform: translate(-50%,-50%);
+  }
+}
+
+@keyframes animateLoadingState {
+  0% {
+    color: black;
+  }
+  50% {
+    color: grey;
+  }
+  100% {
+    color: black;
+  }
+}
+
+
+@keyframes showResultItem {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
